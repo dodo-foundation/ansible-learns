@@ -34,3 +34,7 @@ ansible-playbook version-finder.yml -e packages=httpd
 # Multi package query
 ansible-playbook version-finder.yml -e packages=httpd,vsftpd
 ```
+
+_outputs_
+
+https://asciinema.org/a/nS8TEgAxJ5HJPPzFhGkUxBvdv
