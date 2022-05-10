@@ -1,4 +1,4 @@
-redhat rpm-package-query.md
+_redhat rpm package query_
 
 ```yml
 ---
@@ -25,7 +25,7 @@ redhat rpm-package-query.md
     when: packages is defined
 ```
 
-Execution command
+_Execution command_
 
 ```bash
 # single package query
