@@ -8,22 +8,29 @@ redhat rpm-package-query.md
   tasks:
   - name: GET INPUT VERSIONS
     debug:
-      msg: "Expects 1 arguments"
+      msg: "Expected 1 Args"
     when: packages is not defined
+  - set_fact: 
+      output: "{{ packages | split(',') | list }}"
+    when: packages is defined
   - name: GET PACKAGE VERSIONS
     shell: "rpm -qa {{ item }}"
-    loop: 
-      - "{{ packages }}"
+    with_items: 
+      - "{{ output }}"
     register: _version_details
     when: packages is defined
   - name: PRINT THE PACKAGE VERSIONS
     debug:
-      msg: "{{ _version_details.results | json_query('[].stdout_lines[]') }}"
+      msg: "{{ _version_details.results | json_query('[].stdout[]') }}"
     when: packages is defined
 ```
 
 Execution command
 
 ```bash
+# single package query
 ansible-playbook version-finder.yml -e packages=httpd
+
+# Multi package query
+ansible-playbook version-finder.yml -e packages=httpd,vsftpd
 ```
