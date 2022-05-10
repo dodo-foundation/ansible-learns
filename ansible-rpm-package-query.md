@@ -37,4 +37,5 @@ ansible-playbook version-finder.yml -e packages=httpd,vsftpd
 
 _outputs_
 
-https://asciinema.org/a/nS8TEgAxJ5HJPPzFhGkUxBvdv
+[![demo](https://asciinema.org/a/nS8TEgAxJ5HJPPzFhGkUxBvdv.svg)](https://asciinema.org/a/nS8TEgAxJ5HJPPzFhGkUxBvdv?autoplay=1)
+
