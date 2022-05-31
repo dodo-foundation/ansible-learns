@@ -4,7 +4,7 @@
 
 ```yml
 
-# file name = clone.yml
+# file: clone.yml
 ---
 - name: ansible playbooks
   hosts: all
@@ -20,7 +20,7 @@
       git: 
         repo: https://{{ GIT_USERNAME }}:{{ GIT_TOKEN }}@github.com/{{ REPO_ACCOUNT }}/{{ REPO_NAME }}.git
         dest: "{{ DESTINATIN }}"
-        single_branch: yes
+        # single_branch: yes
         version: "{{ BRANCH_NAME }}"
 
 ```
